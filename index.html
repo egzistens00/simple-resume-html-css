@@ -25,6 +25,11 @@
           <p class="description profile_description">
             Aspiring Cloud and DevOps Engineer with hands-on experience deploying a resume website using AWS S3 and GitHub Actions. Final-year Computer Science student with basic foundational knowledge in cloud infrastructure, CI/CD, and scripting. Eager to contribute to real-world cloud projects and automation workflows in a dynamic IT team.
           </p>
+          <p style="margin-top: 16px; font-size: 18px;">
+            🔗 <a href="https://d4wgby42mq6mz.cloudfront.net/" target="_blank" style="color: #0073e6; text-decoration: underline; font-weight: 600;">
+              Online Resume Website
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -57,48 +62,6 @@
         </div>
       </div>
 
-      <!-- CONTACT FORM SECTION -->
-      <div class="contact">
-        <h3 class="title">Contact Me</h3>
-        <form action="http://57.181.37.54/contact" method="POST" class="contact_form">
-          <input type="text" name="name" placeholder="Your Name" class="description" required />
-          <input type="email" name="email" placeholder="Your Email" class="description" required />
-          <textarea name="message" placeholder="Your Message" class="description" required></textarea>
-          <button type="submit" class="description">Send</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="group-2">
-      <div class="projects">
-        <h3 class="title">Projects</h3>
-        <div class="project_item">
-          <h4 class="item_title">Personal Resume Website on AWS Cloud</h4>
-          <p class="description">
-            Built a personal resume website using HTML and CSS to showcase my skills, education, and experience.  
-            Integrated a CI/CD pipeline using GitHub Actions to automatically deploy the site to AWS S3 every time I push updates to GitHub.  
-            <br />
-            <a href="https://github.com/egzistens00/simple-resume-html-css" target="_blank" style="color: #0073e6; text-decoration: underline;">
-              View on GitHub
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div class="skills">
-        <h3 class="title">Skills</h3>
-        <ul class="skills_list description">
-          <li><strong>Cloud:</strong> AWS S3, IAM, CloudFront, Lambda (basic)</li>
-          <li><strong>DevOps:</strong> GitHub Actions, CI/CD pipelines</li>
-          <li><strong>Web:</strong> HTML, CSS, JavaScript</li>
-          <li><strong>Programming:</strong> Python, Java, C++</li>
-          <li><strong>Database:</strong> MySQL (basic)</li>
-          <li><strong>OS:</strong> Ubuntu, Kali Linux</li>
-          <li><strong>Other Tools:</strong> Git, Microsoft Office, VS Code</li>
-        </ul>
-      </div>
-
       <div class="cert">
         <h3 class="title">Certifications</h3>
         <div class="cert_item">
@@ -119,6 +82,48 @@
         <ul class="skills_list description">
           <li>Malay (Native)</li>
           <li>English (Intermediate)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="group-2">
+      <div class="projects">
+        <h3 class="title">Projects</h3>
+		
+		<div class="project_item">
+          <h4 class="item_title">Personal Resume Website on AWS Cloud</h4>
+          <p class="description">
+            Built a personal resume website using HTML and CSS to showcase my skills, education, and experience.  
+            Integrated a CI/CD pipeline using GitHub Actions to automatically deploy the site to AWS S3 every time I push updates to GitHub.  
+			<a href="https://github.com/yourusername/visitor-analytics-dashboard" target="_blank" style="color: #0073e6; text-decoration: underline;">
+              View on GitHub
+            </a>
+          </p>
+		  <br />
+            
+        </div>
+
+        <div class="project_item">
+          <h4 class="item_title">Visitor Logging System with AWS Lambda@Edge</h4>
+          <p class="description">
+            Added a real-time visitor tracking feature to my CloudFront-hosted resume website using Lambda@Edge.  
+            Each visit triggers a Lambda function that logs the visitor’s IP, timestamp, and user-agent to DynamoDB.  
+            IAM roles and trust policies were set up to ensure secure edge execution.  
+          </p>
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="title">Skills</h3>
+        <ul class="skills_list description">
+          <li><strong>Cloud:</strong> AWS S3, IAM, CloudFront, Lambda (basic), DynamoDB</li>
+          <li><strong>DevOps:</strong> GitHub Actions, CI/CD pipelines</li>
+          <li><strong>Web:</strong> HTML, CSS, JavaScript</li>
+          <li><strong>Programming:</strong> Python, Java, C++</li>
+          <li><strong>Database:</strong> MySQL (basic)</li>
+          <li><strong>OS:</strong> Ubuntu, Kali Linux</li>
+          <li><strong>Other Tools:</strong> Git, Microsoft Office, VS Code</li>
         </ul>
       </div>
     </div>
