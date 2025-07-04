@@ -2,11 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume - Alif Danial</title>
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .feedback {
+      margin-top: 40px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .feedback input,
+    .feedback textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .feedback button {
+      padding: 10px 20px;
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .feedback button:hover {
+      background-color: #005bb5;
+    }
+    #responseMsg {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -127,82 +162,83 @@
       <div class="skills">
         <h3 class="title">Skills</h3>
         <ul class="skills_list description">
-          <li><strong>Cloud:</strong> AWS S3, IAM, CloudFront, Lambda (basic), EC2, DynamoDB</li>
-          <li><strong>DevOps:</strong> GitHub Actions, CI/CD pipelines, Docker (basic)</li>
+          <li><strong>Cloud:</strong> AWS S3, IAM, CloudFront, Lambda, EC2, DynamoDB</li>
+          <li><strong>DevOps:</strong> GitHub Actions, CI/CD, Docker (basic)</li>
           <li><strong>Web:</strong> HTML, CSS, JavaScript</li>
           <li><strong>Backend:</strong> Flask (Python)</li>
           <li><strong>Programming:</strong> Python, Java, C++</li>
           <li><strong>Database:</strong> MySQL (basic)</li>
           <li><strong>OS:</strong> Ubuntu, Kali Linux</li>
-          <li><strong>Other Tools:</strong> Git, Microsoft Office, VS Code</li>
         </ul>
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <!-- FOOTER -->
-<hr />
+    <hr />
 
-<div class="group-3">
-  <div class="contact">
-    <h3 class="title">Contact</h3>
-    <div class="contact_info">
-      <p class="description">Shah Alam, Selangor</p>
-      <p class="description">011-33247442</p>
-      <p class="description">alifdanial969@gmail.com</p>
+    <div class="group-3">
+      <div class="contact">
+        <h3 class="title">Contact</h3>
+        <div class="contact_info">
+          <p class="description">Shah Alam, Selangor</p>
+          <p class="description">011-33247442</p>
+          <p class="description">alifdanial969@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="social">
+        <h3 class="title">Socials</h3>
+        <div class="social_items">
+          <a href="https://www.linkedin.com/in/alifdanial969" target="_blank" class="social_item">
+            <i data-feather="linkedin"></i><span>/alifdanial969</span>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <!-- ✅ Feedback Form Section -->
+    <div class="feedback">
+      <h3>Visitor Feedback</h3>
+      <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" rows="4" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+        <p id="responseMsg"></p>
+      </form>
+    </div>
+
   </div>
 
-  <div class="social">
-    <h3 class="title">Socials</h3>
-    <div class="social_items">
-      <a href="https://www.linkedin.com/in/alifdanial969" target="_blank" class="social_item">
-        <i data-feather="linkedin"></i><span>LinkedIn alifdanial969</span>
-      </a>
-    </div>
-  </div>
-</div>
+  <script>
+    feather.replace();
 
-<!-- ⬇️ Paste the feedback form right here -->
-<div class="feedback">
-  <h3 class="title">Visitor Feedback</h3>
-  <form id="feedbackForm" style="max-width: 500px;">
-    <label for="name">Name:</label><br />
-    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br />
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    <label for="feedback">Feedback:</label><br />
-    <textarea id="feedback" name="feedback" rows="4" required style="width: 100%; padding: 8px;"></textarea><br />
+      const name = document.getElementById("name").value;
+      const feedback = document.getElementById("feedback").value;
+      const responseMsg = document.getElementById("responseMsg");
 
-    <button type="submit" style="margin-top: 10px; padding: 10px 20px; background-color: #0073e6; color: white; border: none; cursor: pointer;">
-      Submit Feedback
-    </button>
-  </form>
-
-  <p id="responseMsg" style="margin-top: 10px; font-weight: bold;"></p>
-</div>
-
-<script>
-  document.getElementById("feedbackForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const feedback = document.getElementById("feedback").value;
-
-    fetch("http://57.181.37.54:5000/feedback", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, feedback })
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("responseMsg").innerText = data.message || data.error;
-    })
-    .catch(error => {
-      console.error("Error:", error);
-      document.getElementById("responseMsg").innerText = "Something went wrong.";
+      fetch("http://57.181.37.54:5000/feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, feedback })
+      })
+      .then(response => response.json())
+      .then(data => {
+        responseMsg.style.color = "green";
+        responseMsg.innerText = data.message || "Thanks for your feedback!";
+      })
+      .catch(error => {
+        responseMsg.style.color = "red";
+        responseMsg.innerText = "Something went wrong.";
+      });
     });
-  });
-</script>
-
+  </script>
+</body>
+</html>
