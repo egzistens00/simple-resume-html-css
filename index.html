@@ -68,9 +68,7 @@
           <h4 class="item_title">AWS Cloud Quest: Cloud Practitioner</h4>
           <p class="item_subtitle">Amazon Web Services (AWS)</p>
           <p class="description">
-            <a href="https://www.credly.com/badges/793ae970-dbc3-40bd-8da5-c2e7fbc7994b/linked_in_profile"
-              target="_blank"
-              style="color: #0073e6; text-decoration: underline; cursor: pointer;">
+            <a href="https://www.credly.com/badges/793ae970-dbc3-40bd-8da5-c2e7fbc7994b/linked_in_profile" target="_blank" style="color: #0073e6; text-decoration: underline;">
               View Credential
             </a>
           </p>
@@ -90,26 +88,38 @@
     <div class="group-2">
       <div class="projects">
         <h3 class="title">Projects</h3>
-		
-		<div class="project_item">
-          <h4 class="item_title">Personal Resume Website on AWS Cloud</h4>
+
+        <div class="project_item">
+          <h4 class="item_title">Visitor Feedback API (Docker + Flask + EC2)</h4>
           <p class="description">
-            Built a personal resume website using HTML and CSS to showcase my skills, education, and experience.  
-            Integrated a CI/CD pipeline using GitHub Actions to automatically deploy the site to AWS S3 every time I push updates to GitHub.  
-			<a href="https://github.com/yourusername/visitor-analytics-dashboard" target="_blank" style="color: #0073e6; text-decoration: underline;">
+            Created a backend API using Flask and Docker to handle feedback form submissions from my resume website.  
+            Hosted the containerized API on AWS EC2, receiving feedback via HTTP POST and logging it on the server.  
+            Demonstrated full-stack integration from frontend (CloudFront site) to backend (Docker on EC2).  
+            <br />
+            <a href="https://github.com/yourusername/feedback-api" target="_blank" style="color: #0073e6; text-decoration: underline;">
               View on GitHub
             </a>
           </p>
-		  <br />
-            
+        </div>
+
+        <div class="project_item">
+          <h4 class="item_title">Personal Resume Website on AWS Cloud</h4>
+          <p class="description">
+            Built a resume website using HTML and CSS to showcase my skills, education, and experience.  
+            Set up CI/CD pipeline with GitHub Actions to auto-deploy to AWS S3 and serve globally via CloudFront.  
+            <br />
+            <a href="https://github.com/yourusername/visitor-analytics-dashboard" target="_blank" style="color: #0073e6; text-decoration: underline;">
+              View on GitHub
+            </a>
+          </p>
         </div>
 
         <div class="project_item">
           <h4 class="item_title">Visitor Logging System with AWS Lambda@Edge</h4>
           <p class="description">
-            Added a real-time visitor tracking feature to my CloudFront-hosted resume website using Lambda@Edge.  
-            Each visit triggers a Lambda function that logs the visitor’s IP, timestamp, and user-agent to DynamoDB.  
-            IAM roles and trust policies were set up to ensure secure edge execution.  
+            Added real-time visitor tracking to my resume site using Lambda@Edge.  
+            Each page view logs IP address, user agent, and timestamp to DynamoDB.  
+            IAM roles and trust policies were configured to securely execute at the edge.
           </p>
         </div>
       </div>
@@ -117,9 +127,10 @@
       <div class="skills">
         <h3 class="title">Skills</h3>
         <ul class="skills_list description">
-          <li><strong>Cloud:</strong> AWS S3, IAM, CloudFront, Lambda (basic), DynamoDB</li>
-          <li><strong>DevOps:</strong> GitHub Actions, CI/CD pipelines</li>
+          <li><strong>Cloud:</strong> AWS S3, IAM, CloudFront, Lambda (basic), EC2, DynamoDB</li>
+          <li><strong>DevOps:</strong> GitHub Actions, CI/CD pipelines, Docker (basic)</li>
           <li><strong>Web:</strong> HTML, CSS, JavaScript</li>
+          <li><strong>Backend:</strong> Flask (Python)</li>
           <li><strong>Programming:</strong> Python, Java, C++</li>
           <li><strong>Database:</strong> MySQL (basic)</li>
           <li><strong>OS:</strong> Ubuntu, Kali Linux</li>
@@ -129,31 +140,39 @@
     </div>
 
     <!-- FOOTER -->
-    <hr />
+    <!-- FOOTER -->
+<hr />
 
-    <div class="group-3">
-      <div class="contact">
-        <h3 class="title">Contact</h3>
-        <div class="contact_info">
-          <p class="description">Shah Alam, Selangor</p>
-          <p class="description">011-33247442</p>
-          <p class="description">alifdanial969@gmail.com</p>
-        </div>
-      </div>
-
-      <div class="social">
-        <h3 class="title">Socials</h3>
-        <div class="social_items">
-          <a href="https://www.linkedin.com/in/alifdanial969" target="_blank" class="social_item">
-            <i data-feather="linkedin"></i><span>/alifdanial969</span>
-          </a>
-        </div>
-      </div>
+<div class="group-3">
+  <div class="contact">
+    <h3 class="title">Contact</h3>
+    <div class="contact_info">
+      <p class="description">Shah Alam, Selangor</p>
+      <p class="description">011-33247442</p>
+      <p class="description">alifdanial969@gmail.com</p>
     </div>
   </div>
 
-  <script>
-    feather.replace();
-  </script>
-</body>
-</html>
+  <div class="social">
+    <h3 class="title">Socials</h3>
+    <div class="social_items">
+      <a href="https://www.linkedin.com/in/alifdanial969" target="_blank" class="social_item">
+        <i data-feather="linkedin"></i><span>LinkedIn alifdanial969</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ⬇️ Paste the feedback form right here -->
+<div class="feedback">
+  <h3 class="title">Leave a Feedback</h3>
+  <form action="http://<your-ec2-public-ip>:5000/feedback" method="POST" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; padding-top: 10px;">
+    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
+    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
+    <textarea name="message" placeholder="Your Feedback" rows="5" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+    <button type="submit" style="padding: 12px; background-color: #0073e6; color: white; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;">
+      Submit Feedback
+    </button>
+  </form>
+</div>
+
