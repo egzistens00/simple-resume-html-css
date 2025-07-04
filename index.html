@@ -219,13 +219,13 @@
     const name = document.getElementById("name").value;
     const feedback = document.getElementById("feedback").value;
 
-    fetch("http://57.181.37.54:5000/feedback", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, feedback })
-    })
+    fetch("https://api.alifdanialresume.online/feedback", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name, feedback })
+})
     .then(response => response.json())
     .then(data => {
       document.getElementById("responseMsg").innerText = data.message || data.error;
