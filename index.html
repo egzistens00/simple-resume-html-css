@@ -213,32 +213,29 @@
   </div>
 
   <script>
-    feather.replace();
+  document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    const name = document.getElementById("name").value;
+    const feedback = document.getElementById("feedback").value;
 
-      const name = document.getElementById("name").value;
-      const feedback = document.getElementById("feedback").value;
-      const responseMsg = document.getElementById("responseMsg");
-
-      fetch("http://57.181.37.54:5000/feedback", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ name, feedback })
-      })
-      .then(response => response.json())
-      .then(data => {
-        responseMsg.style.color = "green";
-        responseMsg.innerText = data.message || "Thanks for your feedback!";
-      })
-      .catch(error => {
-        responseMsg.style.color = "red";
-        responseMsg.innerText = "Something went wrong.";
-      });
+    fetch("http://57.181.37.54:5000/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, feedback })
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("responseMsg").innerText = data.message || data.error;
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      document.getElementById("responseMsg").innerText = "Something went wrong.";
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
