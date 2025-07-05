@@ -61,8 +61,13 @@
             Final-year Computer Science student with a strong interest in cloud computing and DevOps. Experienced in deploying a personal resume website using AWS services like S3, CloudFront, Lambda@Edge, and DynamoDB. Familiar with CI/CD using GitHub Actions. Eager to learn and contribute to real-world cloud projects during an internship.
           </p>
           <p style="margin-top: 16px; font-size: 18px;">
-            🔗 <a href="https://d4wgby42mq6mz.cloudfront.net/" target="_blank" style="color: #0073e6; text-decoration: underline; font-weight: 600;">
+            🔗 <a href="https://alifdanialresume.online" target="_blank" style="color: #0073e6; text-decoration: underline; font-weight: 600;">
               Online Resume Website
+            </a>
+          </p>
+          <p style="margin-top: 8px;">
+            📄 <a href="Resume - Alif Danial.pdf" download style="color: #0073e6; text-decoration: underline;">
+              Download PDF Resume
             </a>
           </p>
         </div>
@@ -131,7 +136,7 @@
             Hosted the containerized API on AWS EC2, receiving feedback via HTTP POST and logging it on the server.  
             Demonstrated full-stack integration from frontend (CloudFront site) to backend (Docker on EC2).  
             <br />
-            <a href="https://github.com/yourusername/feedback-api" target="_blank" style="color: #0073e6; text-decoration: underline;">
+            <a href="https://github.com/egzistens00/feedback-api" target="_blank" style="color: #0073e6; text-decoration: underline;">
               View on GitHub
             </a>
           </p>
@@ -143,7 +148,7 @@
             Built a resume website using HTML and CSS to showcase my skills, education, and experience.  
             Set up CI/CD pipeline with GitHub Actions to auto-deploy to AWS S3 and serve globally via CloudFront.  
             <br />
-            <a href="https://github.com/yourusername/visitor-analytics-dashboard" target="_blank" style="color: #0073e6; text-decoration: underline;">
+            <a href="https://github.com/egzistens00/html-css-resume" target="_blank" style="color: #0073e6; text-decoration: underline;">
               View on GitHub
             </a>
           </p>
@@ -155,6 +160,10 @@
             Added real-time visitor tracking to my resume site using Lambda@Edge.  
             Each page view logs IP address, user agent, and timestamp to DynamoDB.  
             IAM roles and trust policies were configured to securely execute at the edge.
+            <br />
+            <a href="https://github.com/egzistens00/visitor-analytics-dashboard" target="_blank" style="color: #0073e6; text-decoration: underline;">
+              View on GitHub
+            </a>
           </p>
         </div>
       </div>
@@ -191,6 +200,9 @@
           <a href="https://www.linkedin.com/in/alifdanial969" target="_blank" class="social_item">
             <i data-feather="linkedin"></i><span>/alifdanial969</span>
           </a>
+          <a href="https://github.com/egzistens00" target="_blank" class="social_item">
+            <i data-feather="github"></i><span>/egzistens00</span>
+          </a>
         </div>
       </div>
     </div>
@@ -213,6 +225,8 @@
   </div>
 
   <script>
+  feather.replace();
+
   document.getElementById("feedbackForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -220,12 +234,12 @@
     const feedback = document.getElementById("feedback").value;
 
     fetch("https://api.alifdanialresume.online/feedback", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ name, feedback })
-})
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, feedback })
+    })
     .then(response => response.json())
     .then(data => {
       document.getElementById("responseMsg").innerText = data.message || data.error;
@@ -235,7 +249,6 @@
       document.getElementById("responseMsg").innerText = "Something went wrong.";
     });
   });
-</script>
-
+  </script>
 </body>
 </html>
