@@ -7,6 +7,9 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
     .feedback {
       margin-top: 40px;
       background-color: #f4f4f4;
@@ -41,6 +44,16 @@
       font-weight: bold;
       text-align: center;
     }
+    .social_item span strong {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .description {
+      text-align: justify;
+    }
+    .project_item {
+      margin-bottom: 24px;
+    }
   </style>
 </head>
 <body>
@@ -54,20 +67,18 @@
         </div>
         <div>
           <h1 class="profile_name">
-            <span class="profile_name_lastName">Alisaaaal</span>
+            <span class="profile_name_lastName">Alif Danial</span>
           </h1>
           <p class="profile_title">Computer Science Student</p>
           <p class="description profile_description">
-            Final-year Computer Science student with a strong interest in cloud computing and DevOps. Experienced in deploying a personal resume website using AWS services like S3, CloudFront, Lambda@Edge, and DynamoDB. Familiar with CI/CD using GitHub Actions. Eager to learn and contribute to real-world cloud projects during an internship.
+            Final year Computer Science student with a strong focus on cloud computing and DevOps.  
+            Building and deploying cloud based projects using AWS services such as S3, CloudFront, EC2, Lambda@Edge, and DynamoDB.  
+            Familiar with containerization using Docker and setting up CI/CD pipelines with GitHub Actions.  
+            Actively applying technical skills through real world projects and seeking an internship opportunity to contribute, learn, and grow in a cloud or DevOps environment.
           </p>
-          <p style="margin-top: 16px; font-size: 18px;">
-            🔗 <a href="https://alifdanialresume.online" target="_blank" style="color: #0073e6; text-decoration: underline; font-weight: 600;">
-              Online Resume Website
-            </a>
-          </p>
-          <p style="margin-top: 8px;">
-            📄 <a href="Resume - Alif Danial.pdf" download style="color: #0073e6; text-decoration: underline;">
-              Download PDF Resume
+          <p class="description" style="margin-top: 4px;">
+            🔗 <a href="https://alifdanialresume.online" target="_blank" style="color: #0073e6; text-decoration: underline;">
+              Visit Online Resume
             </a>
           </p>
         </div>
@@ -130,40 +141,37 @@
         <h3 class="title">Projects</h3>
 
         <div class="project_item">
-          <h4 class="item_title">Visitor Feedback API (Docker + Flask + EC2)</h4>
-          <p class="description">
-            Created a backend API using Flask and Docker to handle feedback form submissions from my resume website.  
-            Hosted the containerized API on AWS EC2, receiving feedback via HTTP POST and logging it on the server.  
-            Demonstrated full-stack integration from frontend (CloudFront site) to backend (Docker on EC2).  
-            <br />
-            <a href="https://github.com/egzistens00/feedback-api" target="_blank" style="color: #0073e6; text-decoration: underline;">
-              View on GitHub
+          <div style="text-align: right; margin-bottom: 4px;">
+            <a href="https://github.com/egzistens00/simple-resume-html-css" target="_blank" style="color: #0073e6; text-decoration: underline; font-size: 14px;">
+              View on GitHub ↗
             </a>
+          </div>
+          <h4 class="item_title">Personal Resume Website on AWS</h4>
+          <p class="description">
+            Created a personal resume website using HTML and CSS.  
+            Hosted the site on AWS S3 and available via CloudFront.  
+            Set up automatic deployment using GitHub Actions, so updates go live right after I push to GitHub.  
+            Also implemented CloudFront cache invalidation to ensure the latest version is always shown.
           </p>
         </div>
 
         <div class="project_item">
-          <h4 class="item_title">Personal Resume Website on AWS Cloud</h4>
+          <h4 class="item_title">Feedback API with Flask and Docker</h4>
           <p class="description">
-            Built a resume website using HTML and CSS to showcase my skills, education, and experience.  
-            Set up CI/CD pipeline with GitHub Actions to auto-deploy to AWS S3 and serve globally via CloudFront.  
-            <br />
-            <a href="https://github.com/egzistens00/html-css-resume" target="_blank" style="color: #0073e6; text-decoration: underline;">
-              View on GitHub
-            </a>
+            Built a backend API using Python Flask to collect visitor feedback from my website.  
+            Used Docker to package and run the app, and hosted it on an EC2 instance.  
+            Connected it to DynamoDB to store the feedback securely, and used IAM roles for access control.  
+            Also integrated Cloudflare Tunnel for public access to the locally hosted API.
           </p>
         </div>
 
         <div class="project_item">
-          <h4 class="item_title">Visitor Logging System with AWS Lambda@Edge</h4>
+          <h4 class="item_title">Visitor Logging with Lambda@Edge</h4>
           <p class="description">
-            Added real-time visitor tracking to my resume site using Lambda@Edge.  
-            Each page view logs IP address, user agent, and timestamp to DynamoDB.  
-            IAM roles and trust policies were configured to securely execute at the edge.
-            <br />
-            <a href="https://github.com/egzistens00/visitor-analytics-dashboard" target="_blank" style="color: #0073e6; text-decoration: underline;">
-              View on GitHub
-            </a>
+            Set up AWS Lambda@Edge to track visitors to my site.  
+            Each visit logs IP address, device info, and timestamp to DynamoDB.  
+            Everything runs at the edge no need for a backend server.  
+            Gained experience in connecting CloudFront with Lambda@Edge and managing permissions with IAM.
           </p>
         </div>
       </div>
@@ -198,16 +206,16 @@
         <h3 class="title">Socials</h3>
         <div class="social_items">
           <a href="https://www.linkedin.com/in/alifdanial969" target="_blank" class="social_item">
-            <i data-feather="linkedin"></i><span>/alifdanial969</span>
+            <i data-feather="linkedin"></i><span><strong>LinkedIn:</strong> alifdanial969</span>
           </a>
           <a href="https://github.com/egzistens00" target="_blank" class="social_item">
-            <i data-feather="github"></i><span>/egzistens00</span>
+            <i data-feather="github"></i><span><strong>GitHub:</strong> egzistens00</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- ✅ Feedback Form Section -->
+    <!-- Feedback Form -->
     <div class="feedback">
       <h3>Visitor Feedback</h3>
       <form id="feedbackForm">
@@ -225,30 +233,27 @@
   </div>
 
   <script>
-  feather.replace();
+    feather.replace();
 
-  document.getElementById("feedbackForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const feedback = document.getElementById("feedback").value;
 
-    const name = document.getElementById("name").value;
-    const feedback = document.getElementById("feedback").value;
-
-    fetch("https://api.alifdanialresume.online/feedback", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, feedback })
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("responseMsg").innerText = data.message || data.error;
-    })
-    .catch(error => {
-      console.error("Error:", error);
-      document.getElementById("responseMsg").innerText = "Something went wrong.";
+      fetch("https://api.alifdanialresume.online/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, feedback })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("responseMsg").innerText = data.message || data.error;
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        document.getElementById("responseMsg").innerText = "Something went wrong.";
+      });
     });
-  });
   </script>
 </body>
 </html>
