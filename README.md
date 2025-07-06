@@ -74,10 +74,27 @@ This is a full-stack cloud project where I built and deployed my own resume webs
 
 ## 📸 Screenshots
 
-> *You can add images later, like:*
-- Homepage of your website
-- DynamoDB entries (visitor logs and feedback)
-- API terminal logs or Cloudflare dashboard
+### 🌐 Website Live on CloudFront
+![Website Live](screenshots/website%20live.png)
+
+### 🧠 Flask API Receiving Feedback
+![Flask API](screenshots/flask%20api.png)
+
+### ✅ Feedback Submitted Successfully
+![Feedback Success](screenshots/feedback%20success.png)
+
+### 🖥️ EC2 Logging Feedback to Console
+![Feedback on EC2](screenshots/feedback%20success%20-%20ec2.png)
+
+### 🗃️ Feedback Saved in DynamoDB
+![DynamoDB Feedback](screenshots/dynamodb%20feedback.png)
+
+### 🧾 Visitor Logging with Lambda@Edge
+![Visitor Logs](screenshots/visitor%20logs.png)
+
+### 🌍 Cloudflare Tunnel Exposing Local API
+![Cloudflare Tunnel](screenshots/cloudfare%20tunnel.png)
+
 
 ---
 
