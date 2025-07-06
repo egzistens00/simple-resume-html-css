@@ -2,7 +2,7 @@
 
 # 💼 Alif Danial | Cloud Resume, Feedback API & Visitor Logs
 
-This is a full-stack cloud project where I built and deployed my own resume website, added a feedback system using Flask, and implemented visitor logging using AWS Lambda@Edge. Everything is deployed and working live in the cloud using AWS services.
+This is a cloud project where I built and deployed my own resume website, added a feedback system using Flask, and implemented visitor logging using AWS Lambda@Edge. Everything is deployed and working live in the cloud using AWS services.
 
 ---
 
