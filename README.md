@@ -109,6 +109,9 @@ This is a cloud project where I built and deployed my own resume website, added 
 ### 🌍 Cloudflare Tunnel Exposing Local API
 ![Cloudflare Tunnel](screenshots/cloudfare%20tunnel.png)
 
+### 🌐 Website Monitiorn with Nagios
+![Nagios Dashboard](screenshots/nagios%20dashboard.png)
+
 
 ---
 
