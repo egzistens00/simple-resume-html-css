@@ -38,7 +38,7 @@ This is a cloud project where I built and deployed my own resume website, added 
   - EC2 (Flask API hosting)
 
 ---
-# Monitoring Website Using Nagios
+# 💼 Monitoring Website Using Nagios
 
 
 - `hosts.cfg`: Defines the website host and disables ICMP ping checks.
