@@ -21,6 +21,7 @@ This is a cloud project where I built and deployed my own resume website, added 
 - ✅ Feedback entries stored in **DynamoDB**
 - ✅ Visitor tracking using **Lambda@Edge** (real-time page view logs)
 - ✅ **CI/CD pipeline** with GitHub Actions for automatic S3 deployment
+- ✅ Monitoring website using Nagios
 
 ---
 
@@ -35,6 +36,19 @@ This is a cloud project where I built and deployed my own resume website, added 
   - Lambda@Edge (visitor logging)
   - DynamoDB (data storage)
   - EC2 (Flask API hosting)
+
+---
+# Monitoring Setup for Resume Website
+
+
+- `hosts.cfg`: Defines the website host and disables ICMP ping checks.
+- `services.cfg`: Configures an HTTPS service check using Nagios `check_http`.
+- `commands.cfg`: Contains a dummy host check command (`check-host-always-up`) to avoid ping failures on Cloudflare-hosted domains.
+
+**Notes**
+
+- Host ping is disabled because Cloudflare blocks ICMP.
+- All checks run from an EC2 instance running Nagios Core 4.5.1.
 
 ---
 
